@@ -1,0 +1,57 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Store</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to stores_path, class: button_class(theme: "transparent") do %>
+      All Stores
+      <% end %>
+      <%= link_to edit_store_path(@store), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Store chain:</p>
+        <p><%= @store.store_chain %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Storeid:</p>
+        <p><%= @store.storeid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Phone contract:</p>
+        <p><%= @store.phone_contract %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Email:</p>
+        <p><%= @store.email %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Description:</p>
+        <p><%= @store.description %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Page:</p>
+        <p><%= @store.page %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Open time:</p>
+        <p><%= @store.open_time %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Close time:</p>
+        <p><%= @store.close_time %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Address:</p>
+        <p><%= @store.address %></p>
+      </li>
+      <li>
+        <p class="font-semibold">No employee:</p>
+        <p><%= @store.no_employee %></p>
+      </li>
+  </ul>
+</div>

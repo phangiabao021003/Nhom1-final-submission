@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Discount</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to discounts_path, class: button_class(theme: "transparent") do %>
+      All Discounts
+      <% end %>
+      <%= link_to edit_discount_path(@discount), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Discountid:</p>
+        <p><%= @discount.discountid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Amount:</p>
+        <p><%= @discount.amount %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Startime:</p>
+        <p><%= @discount.startime %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Endtime:</p>
+        <p><%= @discount.endtime %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Standard:</p>
+        <p><%= @discount.standard %></p>
+      </li>
+  </ul>
+</div>

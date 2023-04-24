@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  resid: MyString
+  client: one
+  response: MyText
+  rating: one
+
+two:
+  resid: MyString
+  client: two
+  response: MyText
+  rating: two

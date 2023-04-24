@@ -1,0 +1,46 @@
+<%= form_with(model: employee) do |form| %>
+<% if employee.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% employee.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :store_id, class: label_class %>
+          <%= form.text_field :store_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :empid, class: label_class %>
+          <%= form.text_field :empid, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :empname, class: label_class %>
+          <%= form.text_field :empname, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :empphone, class: label_class %>
+          <%= form.text_field :empphone, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :salary, class: label_class %>
+          <%= form.text_field :salary, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :department_id, class: label_class %>
+          <%= form.text_field :department_id, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if employee.persisted? %>
+<%= link_to "Cancel", employee, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", employees_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

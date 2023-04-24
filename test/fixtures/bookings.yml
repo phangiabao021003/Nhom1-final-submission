@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookingid: MyString
+  client: one
+  booking_productid: MyString
+  no_product: MyString
+  service: one
+  bookingdescription: MyText
+  bookingcost: MyString
+  deposit: MyString
+  datebooking: 2023-04-24 17:23:39
+
+two:
+  bookingid: MyString
+  client: two
+  booking_productid: MyString
+  no_product: MyString
+  service: two
+  bookingdescription: MyText
+  bookingcost: MyString
+  deposit: MyString
+  datebooking: 2023-04-24 17:23:39

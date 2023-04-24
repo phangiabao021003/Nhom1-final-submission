@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store: one
+  product: one
+  supplier: one
+  unit: MyString
+  'no': 1
+  datepurrchasing: 2023-04-24 17:28:43
+  purchasingcost: MyString
+
+two:
+  store: two
+  product: two
+  supplier: two
+  unit: MyString
+  'no': 1
+  datepurrchasing: 2023-04-24 17:28:43
+  purchasingcost: MyString

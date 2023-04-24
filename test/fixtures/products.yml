@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  productname: MyString
+  manufacturing: one
+  cost: MyString
+
+two:
+  productname: MyString
+  manufacturing: two
+  cost: MyString

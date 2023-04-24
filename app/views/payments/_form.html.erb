@@ -1,0 +1,50 @@
+<%= form_with(model: payment) do |form| %>
+<% if payment.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% payment.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :paymentid, class: label_class %>
+          <%= form.text_field :paymentid, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :store_id, class: label_class %>
+          <%= form.text_field :store_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :order_id, class: label_class %>
+          <%= form.text_field :order_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :booking_id, class: label_class %>
+          <%= form.text_field :booking_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :discount_id, class: label_class %>
+          <%= form.text_field :discount_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :paymentcost, class: label_class %>
+          <%= form.text_field :paymentcost, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :paymentdate, class: label_class %>
+          <%= form.datetime_field :paymentdate, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if payment.persisted? %>
+<%= link_to "Cancel", payment, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", payments_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

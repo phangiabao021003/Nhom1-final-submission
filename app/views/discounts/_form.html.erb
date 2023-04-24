@@ -1,0 +1,42 @@
+<%= form_with(model: discount) do |form| %>
+<% if discount.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% discount.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :discountid, class: label_class %>
+          <%= form.text_field :discountid, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :amount, class: label_class %>
+          <%= form.text_field :amount, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :startime, class: label_class %>
+          <%= form.date_field :startime, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :endtime, class: label_class %>
+          <%= form.date_field :endtime, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :standard, class: label_class %>
+          <%= form.text_field :standard, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if discount.persisted? %>
+<%= link_to "Cancel", discount, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", discounts_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

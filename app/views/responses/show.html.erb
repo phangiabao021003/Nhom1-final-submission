@@ -1,0 +1,33 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Response</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to responses_path, class: button_class(theme: "transparent") do %>
+      All Responses
+      <% end %>
+      <%= link_to edit_response_path(@response), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Resid:</p>
+        <p><%= @response.resid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Client:</p>
+        <p><%= @response.client %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Response:</p>
+        <p><%= @response.response %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Rating:</p>
+        <p><%= @response.rating %></p>
+      </li>
+  </ul>
+</div>

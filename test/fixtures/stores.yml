@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store_chain: one
+  storeid: MyString
+  phone_contract: MyString
+  email: MyString
+  description: MyString
+  page: MyString
+  open_time: 2023-04-24 17:21:24
+  close_time: 2023-04-24 17:21:24
+  address: MyText
+  no_employee: 1
+
+two:
+  store_chain: two
+  storeid: MyString
+  phone_contract: MyString
+  email: MyString
+  description: MyString
+  page: MyString
+  open_time: 2023-04-24 17:21:24
+  close_time: 2023-04-24 17:21:24
+  address: MyText
+  no_employee: 1

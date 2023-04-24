@@ -1,0 +1,53 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Booking</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to bookings_path, class: button_class(theme: "transparent") do %>
+      All Bookings
+      <% end %>
+      <%= link_to edit_booking_path(@booking), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Bookingid:</p>
+        <p><%= @booking.bookingid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Client:</p>
+        <p><%= @booking.client %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Booking productid:</p>
+        <p><%= @booking.booking_productid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">No product:</p>
+        <p><%= @booking.no_product %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Service:</p>
+        <p><%= @booking.service %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Bookingdescription:</p>
+        <p><%= @booking.bookingdescription %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Bookingcost:</p>
+        <p><%= @booking.bookingcost %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Deposit:</p>
+        <p><%= @booking.deposit %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Datebooking:</p>
+        <p><%= @booking.datebooking %></p>
+      </li>
+  </ul>
+</div>

@@ -1,0 +1,2 @@
+class Manufacturing < ApplicationRecord
+end

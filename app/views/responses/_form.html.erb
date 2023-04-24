@@ -1,0 +1,38 @@
+<%= form_with(model: response) do |form| %>
+<% if response.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% response.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :resid, class: label_class %>
+          <%= form.text_field :resid, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :client_id, class: label_class %>
+          <%= form.text_field :client_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :response, class: label_class %>
+          <%= form.text_area :response, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :rating_id, class: label_class %>
+          <%= form.text_field :rating_id, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if response.persisted? %>
+<%= link_to "Cancel", response, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", responses_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Store_chain</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to store_chains_path, class: button_class(theme: "transparent") do %>
+      All Store_chains
+      <% end %>
+      <%= link_to edit_store_chain_path(@store_chain), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Chain number:</p>
+        <p><%= @store_chain.chain_number %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Website:</p>
+        <p><%= @store_chain.website %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Header:</p>
+        <p><%= @store_chain.header %></p>
+      </li>
+  </ul>
+</div>

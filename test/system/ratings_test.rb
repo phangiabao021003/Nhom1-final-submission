@@ -15,7 +15,6 @@ class RatingsTest < ApplicationSystemTestCase
     click_on "New rating"
 
     fill_in "Rating", with: @rating.rating
-    fill_in "Ratingid", with: @rating.ratingid
     click_on "Create Rating"
 
     assert_text "Rating was successfully created"
@@ -27,7 +26,6 @@ class RatingsTest < ApplicationSystemTestCase
     click_on "Edit this rating", match: :first
 
     fill_in "Rating", with: @rating.rating
-    fill_in "Ratingid", with: @rating.ratingid
     click_on "Update Rating"
 
     assert_text "Rating was successfully updated"

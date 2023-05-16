@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  headerid: MyString
   name: MyString
   phone: MyString
   email: MyString
 
 two:
+  headerid: MyString
   name: MyString
   phone: MyString
   email: MyString

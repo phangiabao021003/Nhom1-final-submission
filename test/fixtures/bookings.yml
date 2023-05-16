@@ -3,21 +3,17 @@
 one:
   bookingid: MyString
   client: one
-  booking_productid: MyString
-  no_product: MyString
-  service: one
-  bookingdescription: MyText
-  bookingcost: MyString
-  deposit: MyString
-  datebooking: 2023-04-24 17:23:39
+  datebooking: 2023-05-12 14:24:07
+  point: one
+  discount: one
+  total: MyString
+  paymentmethod: one
 
 two:
   bookingid: MyString
   client: two
-  booking_productid: MyString
-  no_product: MyString
-  service: two
-  bookingdescription: MyText
-  bookingcost: MyString
-  deposit: MyString
-  datebooking: 2023-04-24 17:23:39
+  datebooking: 2023-05-12 14:24:07
+  point: two
+  discount: two
+  total: MyString
+  paymentmethod: two

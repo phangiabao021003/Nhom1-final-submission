@@ -14,13 +14,14 @@ class OrdersTest < ApplicationSystemTestCase
     visit orders_url
     click_on "New order"
 
+    fill_in "Buyingmethod", with: @order.buyingmethod_id
     fill_in "Client", with: @order.client_id
-    fill_in "No orderproduct", with: @order.no_orderproduct
-    fill_in "Order productid", with: @order.order_productid
+    fill_in "Discount", with: @order.discount_id
     fill_in "Ordercost", with: @order.ordercost
+    fill_in "Orderdate", with: @order.orderdate
     fill_in "Orderid", with: @order.orderid
-    fill_in "Service", with: @order.service_id
-    fill_in "Store", with: @order.store_id
+    fill_in "Paymentmethod", with: @order.paymentmethod_id
+    fill_in "Point", with: @order.point_id
     click_on "Create Order"
 
     assert_text "Order was successfully created"
@@ -31,13 +32,14 @@ class OrdersTest < ApplicationSystemTestCase
     visit order_url(@order)
     click_on "Edit this order", match: :first
 
+    fill_in "Buyingmethod", with: @order.buyingmethod_id
     fill_in "Client", with: @order.client_id
-    fill_in "No orderproduct", with: @order.no_orderproduct
-    fill_in "Order productid", with: @order.order_productid
+    fill_in "Discount", with: @order.discount_id
     fill_in "Ordercost", with: @order.ordercost
+    fill_in "Orderdate", with: @order.orderdate
     fill_in "Orderid", with: @order.orderid
-    fill_in "Service", with: @order.service_id
-    fill_in "Store", with: @order.store_id
+    fill_in "Paymentmethod", with: @order.paymentmethod_id
+    fill_in "Point", with: @order.point_id
     click_on "Update Order"
 
     assert_text "Order was successfully updated"

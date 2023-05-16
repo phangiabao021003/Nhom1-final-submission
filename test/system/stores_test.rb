@@ -17,11 +17,10 @@ class StoresTest < ApplicationSystemTestCase
     fill_in "Address", with: @store.address
     fill_in "Close time", with: @store.close_time
     fill_in "Description", with: @store.description
-    fill_in "Email", with: @store.email
     fill_in "No employee", with: @store.no_employee
     fill_in "Open time", with: @store.open_time
     fill_in "Page", with: @store.page
-    fill_in "Phone contract", with: @store.phone_contract
+    fill_in "Phone contact", with: @store.phone_contact
     fill_in "Store chain", with: @store.store_chain_id
     fill_in "Storeid", with: @store.storeid
     click_on "Create Store"
@@ -37,11 +36,10 @@ class StoresTest < ApplicationSystemTestCase
     fill_in "Address", with: @store.address
     fill_in "Close time", with: @store.close_time
     fill_in "Description", with: @store.description
-    fill_in "Email", with: @store.email
     fill_in "No employee", with: @store.no_employee
     fill_in "Open time", with: @store.open_time
     fill_in "Page", with: @store.page
-    fill_in "Phone contract", with: @store.phone_contract
+    fill_in "Phone contact", with: @store.phone_contact
     fill_in "Store chain", with: @store.store_chain_id
     fill_in "Storeid", with: @store.storeid
     click_on "Update Store"

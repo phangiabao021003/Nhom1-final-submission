@@ -17,7 +17,7 @@ class DiscountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create discount" do
     assert_difference("Discount.count") do
-      post discounts_url, params: { discount: { amount: @discount.amount, discountid: @discount.discountid, endtime: @discount.endtime, standard: @discount.standard, startime: @discount.startime } }
+      post discounts_url, params: { discount: { amount: @discount.amount, discountid: @discount.discountid, endtime: @discount.endtime, pointstandard: @discount.pointstandard, starttime: @discount.starttime } }
     end
 
     assert_redirected_to discount_url(Discount.last)
@@ -34,7 +34,7 @@ class DiscountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update discount" do
-    patch discount_url(@discount), params: { discount: { amount: @discount.amount, discountid: @discount.discountid, endtime: @discount.endtime, standard: @discount.standard, startime: @discount.startime } }
+    patch discount_url(@discount), params: { discount: { amount: @discount.amount, discountid: @discount.discountid, endtime: @discount.endtime, pointstandard: @discount.pointstandard, starttime: @discount.starttime } }
     assert_redirected_to discount_url(@discount)
   end
 

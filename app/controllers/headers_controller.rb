@@ -65,6 +65,6 @@ class HeadersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def header_params
-      params.require(:header).permit(:name, :phone, :email)
+      params.require(:header).permit(:headerid, :name, :phone, :email)
     end
 end

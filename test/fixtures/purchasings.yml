@@ -2,18 +2,22 @@
 
 one:
   store: one
+  purchasingid: MyString
   product: one
   supplier: one
   unit: MyString
-  'no': 1
-  datepurrchasing: 2023-04-24 17:28:43
+  number_of_unit: 1
+  note: MyText
+  datepurchasing: 2023-05-11 00:56:19
   purchasingcost: MyString
 
 two:
   store: two
+  purchasingid: MyString
   product: two
   supplier: two
   unit: MyString
-  'no': 1
-  datepurrchasing: 2023-04-24 17:28:43
+  number_of_unit: 1
+  note: MyText
+  datepurchasing: 2023-05-11 00:56:19
   purchasingcost: MyString

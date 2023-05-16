@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Booking_detail</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to booking_details_path, class: button_class(theme: "transparent") do %>
+      All Booking_details
+      <% end %>
+      <%= link_to edit_booking_detail_path(@booking_detail), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Booking:</p>
+        <p><%= @booking_detail.booking %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Bookingdetailid:</p>
+        <p><%= @booking_detail.bookingdetailid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Service:</p>
+        <p><%= @booking_detail.service %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Time:</p>
+        <p><%= @booking_detail.time %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Bookingdescription:</p>
+        <p><%= @booking_detail.bookingdescription %></p>
+      </li>
+  </ul>
+</div>

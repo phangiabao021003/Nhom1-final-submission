@@ -1,0 +1,42 @@
+<%= form_with(model: booking_detail) do |form| %>
+<% if booking_detail.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(booking_detail.errors.count, "error") %> prohibited this booking_detail from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% booking_detail.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :booking_id, class: label_class %>
+          <%= form.text_field :booking_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :bookingdetailid, class: label_class %>
+          <%= form.text_field :bookingdetailid, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :service_id, class: label_class %>
+          <%= form.text_field :service_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :time, class: label_class %>
+          <%= form.datetime_field :time, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :bookingdescription, class: label_class %>
+          <%= form.text_area :bookingdescription, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if booking_detail.persisted? %>
+<%= link_to "Cancel", booking_detail, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", booking_details_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

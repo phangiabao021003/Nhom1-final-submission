@@ -14,15 +14,13 @@ class BookingsTest < ApplicationSystemTestCase
     visit bookings_url
     click_on "New booking"
 
-    fill_in "Booking productid", with: @booking.booking_productid
-    fill_in "Bookingcost", with: @booking.bookingcost
-    fill_in "Bookingdescription", with: @booking.bookingdescription
     fill_in "Bookingid", with: @booking.bookingid
     fill_in "Client", with: @booking.client_id
     fill_in "Datebooking", with: @booking.datebooking
-    fill_in "Deposit", with: @booking.deposit
-    fill_in "No product", with: @booking.no_product
-    fill_in "Service", with: @booking.service_id
+    fill_in "Discount", with: @booking.discount_id
+    fill_in "Paymentmethod", with: @booking.paymentmethod_id
+    fill_in "Point", with: @booking.point_id
+    fill_in "Total", with: @booking.total
     click_on "Create Booking"
 
     assert_text "Booking was successfully created"
@@ -33,15 +31,13 @@ class BookingsTest < ApplicationSystemTestCase
     visit booking_url(@booking)
     click_on "Edit this booking", match: :first
 
-    fill_in "Booking productid", with: @booking.booking_productid
-    fill_in "Bookingcost", with: @booking.bookingcost
-    fill_in "Bookingdescription", with: @booking.bookingdescription
     fill_in "Bookingid", with: @booking.bookingid
     fill_in "Client", with: @booking.client_id
     fill_in "Datebooking", with: @booking.datebooking
-    fill_in "Deposit", with: @booking.deposit
-    fill_in "No product", with: @booking.no_product
-    fill_in "Service", with: @booking.service_id
+    fill_in "Discount", with: @booking.discount_id
+    fill_in "Paymentmethod", with: @booking.paymentmethod_id
+    fill_in "Point", with: @booking.point_id
+    fill_in "Total", with: @booking.total
     click_on "Update Booking"
 
     assert_text "Booking was successfully updated"

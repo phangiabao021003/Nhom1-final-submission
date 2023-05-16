@@ -17,7 +17,6 @@ class ClientsTest < ApplicationSystemTestCase
     fill_in "Clientemail", with: @client.clientemail
     fill_in "Clientname", with: @client.clientname
     fill_in "Clientphone", with: @client.clientphone
-    fill_in "Clientstandard", with: @client.clientstandard
     fill_in "Store", with: @client.store_id
     click_on "Create Client"
 
@@ -32,7 +31,6 @@ class ClientsTest < ApplicationSystemTestCase
     fill_in "Clientemail", with: @client.clientemail
     fill_in "Clientname", with: @client.clientname
     fill_in "Clientphone", with: @client.clientphone
-    fill_in "Clientstandard", with: @client.clientstandard
     fill_in "Store", with: @client.store_id
     click_on "Update Client"
 

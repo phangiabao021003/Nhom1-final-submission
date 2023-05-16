@@ -17,7 +17,7 @@ class HeadersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create header" do
     assert_difference("Header.count") do
-      post headers_url, params: { header: { email: @header.email, name: @header.name, phone: @header.phone } }
+      post headers_url, params: { header: { email: @header.email, headerid: @header.headerid, name: @header.name, phone: @header.phone } }
     end
 
     assert_redirected_to header_url(Header.last)
@@ -34,7 +34,7 @@ class HeadersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update header" do
-    patch header_url(@header), params: { header: { email: @header.email, name: @header.name, phone: @header.phone } }
+    patch header_url(@header), params: { header: { email: @header.email, headerid: @header.headerid, name: @header.name, phone: @header.phone } }
     assert_redirected_to header_url(@header)
   end
 

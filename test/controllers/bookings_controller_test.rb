@@ -17,7 +17,7 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create booking" do
     assert_difference("Booking.count") do
-      post bookings_url, params: { booking: { booking_productid: @booking.booking_productid, bookingcost: @booking.bookingcost, bookingdescription: @booking.bookingdescription, bookingid: @booking.bookingid, client_id: @booking.client_id, datebooking: @booking.datebooking, deposit: @booking.deposit, no_product: @booking.no_product, service_id: @booking.service_id } }
+      post bookings_url, params: { booking: { bookingid: @booking.bookingid, client_id: @booking.client_id, datebooking: @booking.datebooking, discount_id: @booking.discount_id, paymentmethod_id: @booking.paymentmethod_id, point_id: @booking.point_id, total: @booking.total } }
     end
 
     assert_redirected_to booking_url(Booking.last)
@@ -34,7 +34,7 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update booking" do
-    patch booking_url(@booking), params: { booking: { booking_productid: @booking.booking_productid, bookingcost: @booking.bookingcost, bookingdescription: @booking.bookingdescription, bookingid: @booking.bookingid, client_id: @booking.client_id, datebooking: @booking.datebooking, deposit: @booking.deposit, no_product: @booking.no_product, service_id: @booking.service_id } }
+    patch booking_url(@booking), params: { booking: { bookingid: @booking.bookingid, client_id: @booking.client_id, datebooking: @booking.datebooking, discount_id: @booking.discount_id, paymentmethod_id: @booking.paymentmethod_id, point_id: @booking.point_id, total: @booking.total } }
     assert_redirected_to booking_url(@booking)
   end
 

@@ -3,15 +3,9 @@
 one:
   supplierid: MyString
   suppliername: MyString
-  product: one
-  manufacturing: one
-  costproduct: MyString
-  producttype: one
+  phone: MyString
 
 two:
   supplierid: MyString
   suppliername: MyString
-  product: two
-  manufacturing: two
-  costproduct: MyString
-  producttype: two
+  phone: MyString

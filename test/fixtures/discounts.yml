@@ -3,13 +3,13 @@
 one:
   discountid: MyString
   amount: MyString
-  startime: 2023-04-24
-  endtime: 2023-04-24
-  standard: MyString
+  starttime: 2023-05-16
+  endtime: 2023-05-16
+  pointstandard: MyString
 
 two:
   discountid: MyString
   amount: MyString
-  startime: 2023-04-24
-  endtime: 2023-04-24
-  standard: MyString
+  starttime: 2023-05-16
+  endtime: 2023-05-16
+  pointstandard: MyString

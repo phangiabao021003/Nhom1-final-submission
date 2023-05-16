@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking: one
+  bookingdetailid: MyString
+  service: one
+  time: 2023-05-12 13:35:32
+  bookingdescription: MyText
+
+two:
+  booking: two
+  bookingdetailid: MyString
+  service: two
+  time: 2023-05-12 13:35:32
+  bookingdescription: MyText

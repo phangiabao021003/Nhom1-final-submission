@@ -15,27 +15,35 @@
   <ul class="text-slate-700">
       <li>
         <p class="font-semibold">Store:</p>
-        <p><%= @purchasing.store %></p>
+        <p><%= @purchasing.store.storeid %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Purchasingid:</p>
+        <p><%= @purchasing.purchasingid %></p>
       </li>
       <li>
         <p class="font-semibold">Product:</p>
-        <p><%= @purchasing.product %></p>
+        <p><%= @purchasing.product.productname %></p>
       </li>
       <li>
         <p class="font-semibold">Supplier:</p>
-        <p><%= @purchasing.supplier %></p>
+        <p><%= @purchasing.suppliername %></p>
       </li>
       <li>
         <p class="font-semibold">Unit:</p>
         <p><%= @purchasing.unit %></p>
       </li>
       <li>
-        <p class="font-semibold">No:</p>
-        <p><%= @purchasing.no %></p>
+        <p class="font-semibold">Number of unit:</p>
+        <p><%= @purchasing.number_of_unit %></p>
       </li>
       <li>
-        <p class="font-semibold">Datepurrchasing:</p>
-        <p><%= @purchasing.datepurrchasing %></p>
+        <p class="font-semibold">Note:</p>
+        <p><%= @purchasing.note %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Datepurchasing:</p>
+        <p><%= @purchasing.datepurchasing %></p>
       </li>
       <li>
         <p class="font-semibold">Purchasingcost:</p>

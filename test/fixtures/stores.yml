@@ -3,23 +3,21 @@
 one:
   store_chain: one
   storeid: MyString
-  phone_contract: MyString
-  email: MyString
-  description: MyString
-  page: MyString
-  open_time: 2023-04-24 17:21:24
-  close_time: 2023-04-24 17:21:24
+  phone_contact: MyString
+  description: MyText
+  page: MyText
+  open_time: MyString
+  close_time: MyString
   address: MyText
   no_employee: 1
 
 two:
   store_chain: two
   storeid: MyString
-  phone_contract: MyString
-  email: MyString
-  description: MyString
-  page: MyString
-  open_time: 2023-04-24 17:21:24
-  close_time: 2023-04-24 17:21:24
+  phone_contact: MyString
+  description: MyText
+  page: MyText
+  open_time: MyString
+  close_time: MyString
   address: MyText
   no_employee: 1

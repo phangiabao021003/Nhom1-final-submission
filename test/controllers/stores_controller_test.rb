@@ -17,7 +17,7 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
 
   test "should create store" do
     assert_difference("Store.count") do
-      post stores_url, params: { store: { address: @store.address, close_time: @store.close_time, description: @store.description, email: @store.email, no_employee: @store.no_employee, open_time: @store.open_time, page: @store.page, phone_contract: @store.phone_contract, store_chain_id: @store.store_chain_id, storeid: @store.storeid } }
+      post stores_url, params: { store: { address: @store.address, close_time: @store.close_time, description: @store.description, no_employee: @store.no_employee, open_time: @store.open_time, page: @store.page, phone_contact: @store.phone_contact, store_chain_id: @store.store_chain_id, storeid: @store.storeid } }
     end
 
     assert_redirected_to store_url(Store.last)
@@ -34,7 +34,7 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update store" do
-    patch store_url(@store), params: { store: { address: @store.address, close_time: @store.close_time, description: @store.description, email: @store.email, no_employee: @store.no_employee, open_time: @store.open_time, page: @store.page, phone_contract: @store.phone_contract, store_chain_id: @store.store_chain_id, storeid: @store.storeid } }
+    patch store_url(@store), params: { store: { address: @store.address, close_time: @store.close_time, description: @store.description, no_employee: @store.no_employee, open_time: @store.open_time, page: @store.page, phone_contact: @store.phone_contact, store_chain_id: @store.store_chain_id, storeid: @store.storeid } }
     assert_redirected_to store_url(@store)
   end
 

@@ -1,10 +1,5 @@
 <div id="<%= dom_id order %>">
   <p>
-    <strong>Store:</strong>
-    <%= order.store_id %>
-  </p>
-
-  <p>
     <strong>Orderid:</strong>
     <%= order.orderid %>
   </p>
@@ -15,23 +10,33 @@
   </p>
 
   <p>
-    <strong>Order productid:</strong>
-    <%= order.order_productid %>
+    <strong>Orderdate:</strong>
+    <%= order.orderdate %>
   </p>
 
   <p>
-    <strong>No orderproduct:</strong>
-    <%= order.no_orderproduct %>
+    <strong>Point:</strong>
+    <%= order.point_id %>
   </p>
 
   <p>
-    <strong>Service:</strong>
-    <%= order.service_id %>
+    <strong>Discount:</strong>
+    <%= order.discount_id %>
   </p>
 
   <p>
     <strong>Ordercost:</strong>
     <%= order.ordercost %>
+  </p>
+
+  <p>
+    <strong>Paymentmethod:</strong>
+    <%= order.paymentmethod_id %>
+  </p>
+
+  <p>
+    <strong>Buyingmethod:</strong>
+    <%= order.buyingmethod_id %>
   </p>
 
 </div>

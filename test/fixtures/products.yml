@@ -2,10 +2,12 @@
 
 one:
   productname: MyString
+  producttype: one
   manufacturing: one
   cost: MyString
 
 two:
   productname: MyString
+  producttype: two
   manufacturing: two
   cost: MyString

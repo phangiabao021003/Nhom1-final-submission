@@ -17,6 +17,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Cost", with: @product.cost
     fill_in "Manufacturing", with: @product.manufacturing_id
     fill_in "Productname", with: @product.productname
+    fill_in "Producttype", with: @product.producttype_id
     click_on "Create Product"
 
     assert_text "Product was successfully created"
@@ -30,6 +31,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Cost", with: @product.cost
     fill_in "Manufacturing", with: @product.manufacturing_id
     fill_in "Productname", with: @product.productname
+    fill_in "Producttype", with: @product.producttype_id
     click_on "Update Product"
 
     assert_text "Product was successfully updated"

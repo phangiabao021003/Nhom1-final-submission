@@ -17,7 +17,7 @@ class PurchasingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create purchasing" do
     assert_difference("Purchasing.count") do
-      post purchasings_url, params: { purchasing: { datepurrchasing: @purchasing.datepurrchasing, no: @purchasing.no, product_id: @purchasing.product_id, purchasingcost: @purchasing.purchasingcost, store_id: @purchasing.store_id, supplier_id: @purchasing.supplier_id, unit: @purchasing.unit } }
+      post purchasings_url, params: { purchasing: { datepurchasing: @purchasing.datepurchasing, note: @purchasing.note, number_of_unit: @purchasing.number_of_unit, product_id: @purchasing.product_id, purchasingcost: @purchasing.purchasingcost, purchasingid: @purchasing.purchasingid, store_id: @purchasing.store_id, supplier_id: @purchasing.supplier_id, unit: @purchasing.unit } }
     end
 
     assert_redirected_to purchasing_url(Purchasing.last)
@@ -34,7 +34,7 @@ class PurchasingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update purchasing" do
-    patch purchasing_url(@purchasing), params: { purchasing: { datepurrchasing: @purchasing.datepurrchasing, no: @purchasing.no, product_id: @purchasing.product_id, purchasingcost: @purchasing.purchasingcost, store_id: @purchasing.store_id, supplier_id: @purchasing.supplier_id, unit: @purchasing.unit } }
+    patch purchasing_url(@purchasing), params: { purchasing: { datepurchasing: @purchasing.datepurchasing, note: @purchasing.note, number_of_unit: @purchasing.number_of_unit, product_id: @purchasing.product_id, purchasingcost: @purchasing.purchasingcost, purchasingid: @purchasing.purchasingid, store_id: @purchasing.store_id, supplier_id: @purchasing.supplier_id, unit: @purchasing.unit } }
     assert_redirected_to purchasing_url(@purchasing)
   end
 

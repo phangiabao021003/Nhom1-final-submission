@@ -20,32 +20,24 @@
           <%= form.text_field :client_id, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :booking_productid, class: label_class %>
-          <%= form.text_field :booking_productid, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :no_product, class: label_class %>
-          <%= form.text_field :no_product, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :service_id, class: label_class %>
-          <%= form.text_field :service_id, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :bookingdescription, class: label_class %>
-          <%= form.text_area :bookingdescription, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :bookingcost, class: label_class %>
-          <%= form.text_field :bookingcost, class: input_class %>
-      </div>
-  <div class="mb-6">
-        <%= form.label :deposit, class: label_class %>
-          <%= form.text_field :deposit, class: input_class %>
-      </div>
-  <div class="mb-6">
         <%= form.label :datebooking, class: label_class %>
           <%= form.datetime_field :datebooking, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :point_id, class: label_class %>
+          <%= form.text_field :point_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :discount_id, class: label_class %>
+          <%= form.text_field :discount_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :total, class: label_class %>
+          <%= form.text_field :total, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :paymentmethod_id, class: label_class %>
+          <%= form.text_field :paymentmethod_id, class: input_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

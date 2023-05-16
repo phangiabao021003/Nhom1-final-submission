@@ -15,6 +15,7 @@ class HeadersTest < ApplicationSystemTestCase
     click_on "New header"
 
     fill_in "Email", with: @header.email
+    fill_in "Headerid", with: @header.headerid
     fill_in "Name", with: @header.name
     fill_in "Phone", with: @header.phone
     click_on "Create Header"
@@ -28,6 +29,7 @@ class HeadersTest < ApplicationSystemTestCase
     click_on "Edit this header", match: :first
 
     fill_in "Email", with: @header.email
+    fill_in "Headerid", with: @header.headerid
     fill_in "Name", with: @header.name
     fill_in "Phone", with: @header.phone
     click_on "Update Header"

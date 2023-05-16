@@ -14,10 +14,7 @@ class SuppliersTest < ApplicationSystemTestCase
     visit suppliers_url
     click_on "New supplier"
 
-    fill_in "Costproduct", with: @supplier.costproduct
-    fill_in "Manufacturing", with: @supplier.manufacturing_id
-    fill_in "Product", with: @supplier.product_id
-    fill_in "Producttype", with: @supplier.producttype_id
+    fill_in "Phone", with: @supplier.phone
     fill_in "Supplierid", with: @supplier.supplierid
     fill_in "Suppliername", with: @supplier.suppliername
     click_on "Create Supplier"
@@ -30,10 +27,7 @@ class SuppliersTest < ApplicationSystemTestCase
     visit supplier_url(@supplier)
     click_on "Edit this supplier", match: :first
 
-    fill_in "Costproduct", with: @supplier.costproduct
-    fill_in "Manufacturing", with: @supplier.manufacturing_id
-    fill_in "Product", with: @supplier.product_id
-    fill_in "Producttype", with: @supplier.producttype_id
+    fill_in "Phone", with: @supplier.phone
     fill_in "Supplierid", with: @supplier.supplierid
     fill_in "Suppliername", with: @supplier.suppliername
     click_on "Update Supplier"

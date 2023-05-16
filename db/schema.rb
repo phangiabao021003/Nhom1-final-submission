@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_15_235722) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,20 +49,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "booking_details", force: :cascade do |t|
+    t.integer "booking_id", null: false
+    t.string "bookingdetailid"
+    t.integer "service_id", null: false
+    t.datetime "time"
+    t.text "bookingdescription"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_booking_details_on_booking_id"
+    t.index ["service_id"], name: "index_booking_details_on_service_id"
+  end
+
   create_table "bookings", force: :cascade do |t|
     t.string "bookingid"
     t.integer "client_id", null: false
-    t.string "booking_productid"
-    t.string "no_product"
-    t.integer "service_id", null: false
-    t.text "bookingdescription"
-    t.string "bookingcost"
-    t.string "deposit"
     t.datetime "datebooking"
+    t.integer "point_id", null: false
+    t.integer "discount_id", null: false
+    t.string "total"
+    t.integer "paymentmethod_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_bookings_on_client_id"
-    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["discount_id"], name: "index_bookings_on_discount_id"
+    t.index ["paymentmethod_id"], name: "index_bookings_on_paymentmethod_id"
+    t.index ["point_id"], name: "index_bookings_on_point_id"
+  end
+
+  create_table "buyingmethods", force: :cascade do |t|
+    t.string "buyingmed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "clients", force: :cascade do |t|
@@ -70,7 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
     t.string "clientphone"
     t.string "clientname"
     t.string "clientemail"
-    t.string "clientstandard"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["store_id"], name: "index_clients_on_store_id"
@@ -86,9 +103,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   create_table "discounts", force: :cascade do |t|
     t.string "discountid"
     t.string "amount"
-    t.date "startime"
+    t.date "starttime"
     t.date "endtime"
-    t.string "standard"
+    t.string "pointstandard"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -118,6 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   end
 
   create_table "headers", force: :cascade do |t|
+    t.string "headerid"
     t.string "name"
     t.string "phone"
     t.string "email"
@@ -132,35 +150,48 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "store_id", null: false
-    t.string "orderid"
-    t.integer "client_id", null: false
-    t.string "order_productid"
-    t.string "no_orderproduct"
-    t.integer "service_id", null: false
+  create_table "order_details", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.string "detailid"
+    t.integer "product_id", null: false
+    t.string "productquantity"
     t.string "ordercost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_orders_on_client_id"
-    t.index ["service_id"], name: "index_orders_on_service_id"
-    t.index ["store_id"], name: "index_orders_on_store_id"
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+    t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "payments", force: :cascade do |t|
-    t.string "paymentid"
-    t.integer "store_id", null: false
-    t.integer "order_id", null: false
-    t.integer "booking_id", null: false
+  create_table "orders", force: :cascade do |t|
+    t.string "orderid"
+    t.integer "client_id", null: false
+    t.datetime "orderdate"
+    t.integer "point_id", null: false
     t.integer "discount_id", null: false
-    t.string "paymentcost"
-    t.datetime "paymentdate"
+    t.string "ordercost"
+    t.integer "paymentmethod_id", null: false
+    t.integer "buyingmethod_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_payments_on_booking_id"
-    t.index ["discount_id"], name: "index_payments_on_discount_id"
-    t.index ["order_id"], name: "index_payments_on_order_id"
-    t.index ["store_id"], name: "index_payments_on_store_id"
+    t.index ["buyingmethod_id"], name: "index_orders_on_buyingmethod_id"
+    t.index ["client_id"], name: "index_orders_on_client_id"
+    t.index ["discount_id"], name: "index_orders_on_discount_id"
+    t.index ["paymentmethod_id"], name: "index_orders_on_paymentmethod_id"
+    t.index ["point_id"], name: "index_orders_on_point_id"
+  end
+
+  create_table "paymentmethods", force: :cascade do |t|
+    t.string "paymentmed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.string "pointname"
+    t.text "description"
+    t.string "bonuspoint"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_types", force: :cascade do |t|
@@ -172,20 +203,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
 
   create_table "products", force: :cascade do |t|
     t.string "productname"
+    t.integer "producttype_id", null: false
     t.integer "manufacturing_id", null: false
     t.string "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manufacturing_id"], name: "index_products_on_manufacturing_id"
+    t.index ["producttype_id"], name: "index_products_on_producttype_id"
   end
 
   create_table "purchasings", force: :cascade do |t|
     t.integer "store_id", null: false
+    t.string "purchasingid"
     t.integer "product_id", null: false
     t.integer "supplier_id", null: false
     t.string "unit"
-    t.integer "no"
-    t.datetime "datepurrchasing"
+    t.integer "number_of_unit"
+    t.text "note"
+    t.datetime "datepurchasing"
     t.string "purchasingcost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -195,7 +230,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.string "ratingid"
     t.string "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -232,12 +266,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   create_table "stores", force: :cascade do |t|
     t.integer "store_chain_id", null: false
     t.string "storeid"
-    t.string "phone_contract"
-    t.string "email"
-    t.string "description"
-    t.string "page"
-    t.datetime "open_time"
-    t.datetime "close_time"
+    t.string "phone_contact"
+    t.text "description"
+    t.text "page"
+    t.string "open_time"
+    t.string "close_time"
     t.text "address"
     t.integer "no_employee"
     t.datetime "created_at", null: false
@@ -248,15 +281,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   create_table "suppliers", force: :cascade do |t|
     t.string "supplierid"
     t.string "suppliername"
-    t.integer "product_id", null: false
-    t.integer "manufacturing_id", null: false
-    t.string "costproduct"
-    t.integer "producttype_id", null: false
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["manufacturing_id"], name: "index_suppliers_on_manufacturing_id"
-    t.index ["product_id"], name: "index_suppliers_on_product_id"
-    t.index ["producttype_id"], name: "index_suppliers_on_producttype_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -276,19 +303,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "booking_details", "bookings"
+  add_foreign_key "booking_details", "services"
   add_foreign_key "bookings", "clients"
-  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "discounts"
+  add_foreign_key "bookings", "paymentmethods"
+  add_foreign_key "bookings", "points"
   add_foreign_key "clients", "stores"
   add_foreign_key "employees", "departments"
   add_foreign_key "employees", "stores"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "order_details", "products"
+  add_foreign_key "orders", "buyingmethods"
   add_foreign_key "orders", "clients"
-  add_foreign_key "orders", "services"
-  add_foreign_key "orders", "stores"
-  add_foreign_key "payments", "bookings"
-  add_foreign_key "payments", "discounts"
-  add_foreign_key "payments", "orders"
-  add_foreign_key "payments", "stores"
+  add_foreign_key "orders", "discounts"
+  add_foreign_key "orders", "paymentmethods"
+  add_foreign_key "orders", "points"
   add_foreign_key "products", "manufacturings"
+  add_foreign_key "products", "producttypes"
   add_foreign_key "purchasings", "products"
   add_foreign_key "purchasings", "stores"
   add_foreign_key "purchasings", "suppliers"
@@ -296,7 +328,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_103104) do
   add_foreign_key "responses", "ratings"
   add_foreign_key "store_chains", "headers"
   add_foreign_key "stores", "store_chains"
-  add_foreign_key "suppliers", "manufacturings"
-  add_foreign_key "suppliers", "products"
-  add_foreign_key "suppliers", "producttypes"
 end

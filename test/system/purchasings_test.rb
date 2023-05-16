@@ -14,10 +14,12 @@ class PurchasingsTest < ApplicationSystemTestCase
     visit purchasings_url
     click_on "New purchasing"
 
-    fill_in "Datepurrchasing", with: @purchasing.datepurrchasing
-    fill_in "No", with: @purchasing.no
+    fill_in "Datepurchasing", with: @purchasing.datepurchasing
+    fill_in "Note", with: @purchasing.note
+    fill_in "Number of unit", with: @purchasing.number_of_unit
     fill_in "Product", with: @purchasing.product_id
     fill_in "Purchasingcost", with: @purchasing.purchasingcost
+    fill_in "Purchasingid", with: @purchasing.purchasingid
     fill_in "Store", with: @purchasing.store_id
     fill_in "Supplier", with: @purchasing.supplier_id
     fill_in "Unit", with: @purchasing.unit
@@ -31,10 +33,12 @@ class PurchasingsTest < ApplicationSystemTestCase
     visit purchasing_url(@purchasing)
     click_on "Edit this purchasing", match: :first
 
-    fill_in "Datepurrchasing", with: @purchasing.datepurrchasing
-    fill_in "No", with: @purchasing.no
+    fill_in "Datepurchasing", with: @purchasing.datepurchasing
+    fill_in "Note", with: @purchasing.note
+    fill_in "Number of unit", with: @purchasing.number_of_unit
     fill_in "Product", with: @purchasing.product_id
     fill_in "Purchasingcost", with: @purchasing.purchasingcost
+    fill_in "Purchasingid", with: @purchasing.purchasingid
     fill_in "Store", with: @purchasing.store_id
     fill_in "Supplier", with: @purchasing.supplier_id
     fill_in "Unit", with: @purchasing.unit

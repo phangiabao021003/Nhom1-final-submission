@@ -17,8 +17,8 @@ class DiscountsTest < ApplicationSystemTestCase
     fill_in "Amount", with: @discount.amount
     fill_in "Discountid", with: @discount.discountid
     fill_in "Endtime", with: @discount.endtime
-    fill_in "Standard", with: @discount.standard
-    fill_in "Startime", with: @discount.startime
+    fill_in "Pointstandard", with: @discount.pointstandard
+    fill_in "Starttime", with: @discount.starttime
     click_on "Create Discount"
 
     assert_text "Discount was successfully created"
@@ -32,8 +32,8 @@ class DiscountsTest < ApplicationSystemTestCase
     fill_in "Amount", with: @discount.amount
     fill_in "Discountid", with: @discount.discountid
     fill_in "Endtime", with: @discount.endtime
-    fill_in "Standard", with: @discount.standard
-    fill_in "Startime", with: @discount.startime
+    fill_in "Pointstandard", with: @discount.pointstandard
+    fill_in "Starttime", with: @discount.starttime
     click_on "Update Discount"
 
     assert_text "Discount was successfully updated"

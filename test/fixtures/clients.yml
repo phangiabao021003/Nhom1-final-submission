@@ -5,11 +5,9 @@ one:
   clientphone: MyString
   clientname: MyString
   clientemail: MyString
-  clientstandard: MyString
 
 two:
   store: two
   clientphone: MyString
   clientname: MyString
   clientemail: MyString
-  clientstandard: MyString

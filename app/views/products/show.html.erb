@@ -18,8 +18,12 @@
         <p><%= @product.productname %></p>
       </li>
       <li>
+        <p class="font-semibold">Producttype:</p>
+        <p><%= @product.producttype.typename %></p>
+      </li>
+      <li>
         <p class="font-semibold">Manufacturing:</p>
-        <p><%= @product.manufacturing %></p>
+        <p><%= @product.manufacturing.manname %></p>
       </li>
       <li>
         <p class="font-semibold">Cost:</p>

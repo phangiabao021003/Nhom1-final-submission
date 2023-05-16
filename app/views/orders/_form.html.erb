@@ -12,10 +12,6 @@
 <% end %>
 
   <div class="mb-6">
-        <%= form.label :store_id, class: label_class %>
-          <%= form.text_field :store_id, class: input_class %>
-      </div>
-  <div class="mb-6">
         <%= form.label :orderid, class: label_class %>
           <%= form.text_field :orderid, class: input_class %>
       </div>
@@ -24,20 +20,28 @@
           <%= form.text_field :client_id, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :order_productid, class: label_class %>
-          <%= form.text_field :order_productid, class: input_class %>
+        <%= form.label :orderdate, class: label_class %>
+          <%= form.datetime_field :orderdate, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :no_orderproduct, class: label_class %>
-          <%= form.text_field :no_orderproduct, class: input_class %>
+        <%= form.label :point_id, class: label_class %>
+          <%= form.text_field :point_id, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :service_id, class: label_class %>
-          <%= form.text_field :service_id, class: input_class %>
+        <%= form.label :discount_id, class: label_class %>
+          <%= form.text_field :discount_id, class: input_class %>
       </div>
   <div class="mb-6">
         <%= form.label :ordercost, class: label_class %>
           <%= form.text_field :ordercost, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :paymentmethod_id, class: label_class %>
+          <%= form.text_field :paymentmethod_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :buyingmethod_id, class: label_class %>
+          <%= form.text_field :buyingmethod_id, class: input_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

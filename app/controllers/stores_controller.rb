@@ -65,6 +65,6 @@ class StoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def store_params
-      params.require(:store).permit(:store_chain_id, :storeid, :phone_contract, :email, :description, :page, :open_time, :close_time, :address, :no_employee)
+      params.require(:store).permit(:store_chain_id, :storeid, :phone_contact, :description, :page, :open_time, :close_time, :address, :no_employee)
     end
 end

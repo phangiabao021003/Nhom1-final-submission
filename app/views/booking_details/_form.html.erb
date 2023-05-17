@@ -13,7 +13,7 @@
 
   <div class="mb-6">
         <%= form.label :booking_id, class: label_class %>
-          <%= form.text_field :booking_id, class: input_class %>
+        <%= form.select:booking_id, options_from_collection_for_select(Booking.all, 'id', 'bookingid', selected = booking_detail.booking_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :bookingdetailid, class: label_class %>
@@ -21,7 +21,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :service_id, class: label_class %>
-          <%= form.text_field :service_id, class: input_class %>
+        <%= form.select:service_id, options_from_collection_for_select(Service.all, 'id', 'servicename', selected = booking_detail.service_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :time, class: label_class %>

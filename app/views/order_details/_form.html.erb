@@ -13,7 +13,7 @@
 
   <div class="mb-6">
         <%= form.label :order_id, class: label_class %>
-          <%= form.text_field :order_id, class: input_class %>
+        <%= form.select:order_id, options_from_collection_for_select(Order.all, 'id', 'orderid', selected = order_detail.order_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :detailid, class: label_class %>
@@ -21,7 +21,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :product_id, class: label_class %>
-          <%= form.text_field :product_id, class: input_class %>
+        <%= form.select:product_id, options_from_collection_for_select(Product.all, 'id', 'productname', selected = order_detail.product_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :productquantity, class: label_class %>

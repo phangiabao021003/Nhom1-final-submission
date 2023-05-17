@@ -13,7 +13,7 @@
 
   <div class="mb-6">
         <%= form.label :store_chain_id, class: label_class %>
-          <%= form.text_field :store_chain_id, class: input_class %>
+          <%= form.select :store_chain_id, options_from_collection_for_select(StoreChain.all, 'id', 'chain_number', selected = store.store_chain_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :storeid, class: label_class %>

@@ -17,7 +17,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :client_id, class: label_class %>
-          <%= form.text_field :client_id, class: input_class %>
+        <%= form.select:client_id, options_from_collection_for_select(Client.all, 'id', 'clientphone', selected = order.client_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :orderdate, class: label_class %>
@@ -25,11 +25,11 @@
       </div>
   <div class="mb-6">
         <%= form.label :point_id, class: label_class %>
-          <%= form.text_field :point_id, class: input_class %>
+        <%= form.select:point_id, options_from_collection_for_select(Point.all, 'id', 'bonuspoint', selected = order.point_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :discount_id, class: label_class %>
-          <%= form.text_field :discount_id, class: input_class %>
+        <%= form.select:discount_id, options_from_collection_for_select(Discount.all, 'id', 'amount', selected = order.discount_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :ordercost, class: label_class %>
@@ -37,11 +37,11 @@
       </div>
   <div class="mb-6">
         <%= form.label :paymentmethod_id, class: label_class %>
-          <%= form.text_field :paymentmethod_id, class: input_class %>
+        <%= form.select:paymentmethod_id, options_from_collection_for_select(Paymentmethod.all, 'id', 'paymentmed', selected = order.paymentmethod_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :buyingmethod_id, class: label_class %>
-          <%= form.text_field :buyingmethod_id, class: input_class %>
+        <%= form.select:buyingmethod_id, options_from_collection_for_select(Buyingmethod.all, 'id', 'buyingmed', selected = order.buyingmethod_id), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

@@ -21,7 +21,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :header_id, class: label_class %>
-          <%= form.text_field :header_id, class: input_class %>
+          <%= form.select :header_id, options_from_collection_for_select(Header.all, 'id', 'headerid', selected = store_chain.header_id), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

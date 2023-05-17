@@ -17,11 +17,11 @@
       </div>
   <div class="mb-6">
         <%= form.label :producttype_id, class: label_class %>
-          <%= form.text_field :producttype_id, class: input_class %>
+        <%= form.select:producttype_id, options_from_collection_for_select(ProductType.all, 'id', 'typename', selected = product.producttype_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :manufacturing_id, class: label_class %>
-          <%= form.text_field :manufacturing_id, class: input_class %>
+        <%= form.select:manufacturing_id, options_from_collection_for_select(Manufacturing.all, 'id', 'manname', selected = product.manufacturing_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :cost, class: label_class %>

@@ -17,7 +17,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :client_id, class: label_class %>
-          <%= form.text_field :client_id, class: input_class %>
+        <%= form.select:client_id, options_from_collection_for_select(Client.all, 'id', 'clientphone', selected = response.client_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :response, class: label_class %>
@@ -25,7 +25,7 @@
       </div>
   <div class="mb-6">
         <%= form.label :rating_id, class: label_class %>
-          <%= form.text_field :rating_id, class: input_class %>
+        <%= form.select:rating_id, options_from_collection_for_select(Rating.all, 'id', 'rating', selected = response.rating_id), class: label_class %>
       </div>
 
 <%= form.submit class: button_class(theme: 'primary') %>

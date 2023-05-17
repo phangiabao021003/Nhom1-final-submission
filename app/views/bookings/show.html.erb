@@ -19,7 +19,7 @@
       </li>
       <li>
         <p class="font-semibold">Client:</p>
-        <p><%= @booking.client %></p>
+        <p><%= @booking.client.clientphone %></p>
       </li>
       <li>
         <p class="font-semibold">Datebooking:</p>
@@ -27,11 +27,11 @@
       </li>
       <li>
         <p class="font-semibold">Point:</p>
-        <p><%= @booking.point %></p>
+        <p><%= @booking.point.bonuspoint %></p>
       </li>
       <li>
         <p class="font-semibold">Discount:</p>
-        <p><%= @booking.discount %></p>
+        <p><%= @booking.discount.amount %></p>
       </li>
       <li>
         <p class="font-semibold">Total:</p>
@@ -39,7 +39,7 @@
       </li>
       <li>
         <p class="font-semibold">Paymentmethod:</p>
-        <p><%= @booking.paymentmethod %></p>
+        <p><%= @booking.paymentmethod.paymentmed %></p>
       </li>
   </ul>
 </div>

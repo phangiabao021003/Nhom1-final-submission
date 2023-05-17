@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   belongs_to :client
   belongs_to :point
   belongs_to :discount
-  has_many :orderdetail
+  has_many :order_details
   belongs_to :paymentmethod
   belongs_to :buyingmethod
   

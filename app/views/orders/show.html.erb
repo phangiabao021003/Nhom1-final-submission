@@ -19,7 +19,7 @@
       </li>
       <li>
         <p class="font-semibold">Client:</p>
-        <p><%= @order.client %></p>
+        <p><%= @order.client.clientphone %></p>
       </li>
       <li>
         <p class="font-semibold">Orderdate:</p>
@@ -27,11 +27,11 @@
       </li>
       <li>
         <p class="font-semibold">Point:</p>
-        <p><%= @order.point %></p>
+        <p><%= @order.point.bonuspoint %></p>
       </li>
       <li>
         <p class="font-semibold">Discount:</p>
-        <p><%= @order.discount %></p>
+        <p><%= @order.discount.amount %></p>
       </li>
       <li>
         <p class="font-semibold">Ordercost:</p>
@@ -39,11 +39,11 @@
       </li>
       <li>
         <p class="font-semibold">Paymentmethod:</p>
-        <p><%= @order.paymentmethod %></p>
+        <p><%= @order.paymentmethod.paymentmed %></p>
       </li>
       <li>
         <p class="font-semibold">Buyingmethod:</p>
-        <p><%= @order.buyingmethod %></p>
+        <p><%= @order.buyingmethod.buyingmed %></p>
       </li>
   </ul>
 </div>

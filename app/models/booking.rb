@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :point
   belongs_to :discount
   belongs_to :paymentmethod
-  has_many :bookingdetail
+  has_many :BookingDetail
 
   validates_presence_of :bookingid, :datebooking, :total, message: "Vui lòng điền lại thông tin"
   validates_uniqueness_of :bookingid, :datebooking,  message: "Thông tin đã tồn tại"

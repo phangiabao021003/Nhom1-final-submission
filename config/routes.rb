@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :product_types
   resources :discounts
   resources :suppliers
   resources :ratings
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   resources :responses
   resources :services
   resources :manufacturings
-  resources :product_types
   resources :employees
   resources :departments
   resources :store_chains

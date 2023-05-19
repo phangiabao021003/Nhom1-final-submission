@@ -8,7 +8,8 @@ class Purchasing < ApplicationRecord
   validates_uniqueness_of :purchasingid,  message: "Thông tin đã tồn tại"
   validate :datepurchasing_up_to_present
   def datepurchasing_up_to_present
-    errors.add(:field_name, 'Ngày tháng không hợp lệ') if datepurchasing > Time.now.year
+    if datepurchasing.present? && datepurchasing > Time.now
+      errors.add(:datepurchasing, 'Thời gian không hợp lệ. Vui lòng chọn thời gian trong quá khứ hoặc hiện tại.')
+    end
   end
-  
 end

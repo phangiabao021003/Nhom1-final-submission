@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :product_types
+  belongs_to :ProductType
   belongs_to :manufacturing
   has_many :purchasing
   has_many :OrderDetail

@@ -16,8 +16,8 @@
           <%= form.text_field :productname, class: input_class %>
       </div>
   <div class="mb-6">
-        <%= form.label :producttype_id, class: label_class %>
-        <%= form.select:producttype_id, options_from_collection_for_select(ProductType.all, 'id', 'typename', selected = product.producttype_id), class: label_class %>
+        <%= form.label :product_type_id, class: label_class %>
+        <%= form.select:product_type_id, options_from_collection_for_select(ProductType.all, 'id', 'typename', selected = product.product_type_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :manufacturing_id, class: label_class %>

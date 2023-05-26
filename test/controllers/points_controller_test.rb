@@ -17,7 +17,7 @@ class PointsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create point" do
     assert_difference("Point.count") do
-      post points_url, params: { point: { bonuspoint: @point.bonuspoint, description: @point.description, pointname: @point.pointname } }
+      post points_url, params: { point: { bonuspoint: @point.bonuspoint, description: @point.description } }
     end
 
     assert_redirected_to point_url(Point.last)
@@ -34,7 +34,7 @@ class PointsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update point" do
-    patch point_url(@point), params: { point: { bonuspoint: @point.bonuspoint, description: @point.description, pointname: @point.pointname } }
+    patch point_url(@point), params: { point: { bonuspoint: @point.bonuspoint, description: @point.description } }
     assert_redirected_to point_url(@point)
   end
 

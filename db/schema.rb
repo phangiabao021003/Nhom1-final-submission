@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_16_234955) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_26_074829) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -187,7 +187,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_16_234955) do
   end
 
   create_table "points", force: :cascade do |t|
-    t.string "pointname"
     t.text "description"
     t.string "bonuspoint"
     t.datetime "created_at", null: false
@@ -203,13 +202,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_16_234955) do
 
   create_table "products", force: :cascade do |t|
     t.string "productname"
-    t.integer "producttype_id", null: false
+    t.integer "product_type_id", null: false
     t.integer "manufacturing_id", null: false
     t.string "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manufacturing_id"], name: "index_products_on_manufacturing_id"
-    t.index ["producttype_id"], name: "index_products_on_producttype_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
   end
 
   create_table "purchasings", force: :cascade do |t|
@@ -320,7 +319,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_16_234955) do
   add_foreign_key "orders", "paymentmethods"
   add_foreign_key "orders", "points"
   add_foreign_key "products", "manufacturings"
-  add_foreign_key "products", "producttypes"
+  add_foreign_key "products", "product_types"
   add_foreign_key "purchasings", "products"
   add_foreign_key "purchasings", "stores"
   add_foreign_key "purchasings", "suppliers"

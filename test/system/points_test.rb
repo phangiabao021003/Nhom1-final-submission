@@ -16,7 +16,6 @@ class PointsTest < ApplicationSystemTestCase
 
     fill_in "Bonuspoint", with: @point.bonuspoint
     fill_in "Description", with: @point.description
-    fill_in "Pointname", with: @point.pointname
     click_on "Create Point"
 
     assert_text "Point was successfully created"
@@ -29,7 +28,6 @@ class PointsTest < ApplicationSystemTestCase
 
     fill_in "Bonuspoint", with: @point.bonuspoint
     fill_in "Description", with: @point.description
-    fill_in "Pointname", with: @point.pointname
     click_on "Update Point"
 
     assert_text "Point was successfully updated"
